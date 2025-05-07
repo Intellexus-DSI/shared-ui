@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import "../styles/NavBar.css";
+import "./NavBar.css";
 // @ts-ignore
 import IntellexusLogo from "./InetellexusLogo.png";
 
 
 type NavBarProps = {
-    Logout: React.ReactNode;
+    // Logout: React.ReactNode;
 };
 
-const NavBar: React.FC<NavBarProps> = ({ Logout }) => {
+const NavBar: React.FC<NavBarProps> = ({  }) => {
     const navigate = useNavigate();
     const [dropdownStates, setDropdownStates] = useState({
         texts: false,
@@ -176,7 +176,7 @@ const NavBar: React.FC<NavBarProps> = ({ Logout }) => {
                         >
                             Info
                         </Nav.Link>
-                        {Logout}
+                        {/* {Logout} */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
