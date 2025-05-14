@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import "./NavBar.css";
 // @ts-ignore
-import IntellexusLogo from "./InetellexusLogo.png";
+import IntellexusLogo from "../assets/InetellexusLogo.png";
 
 
 const NavBar: React.FC = () => {

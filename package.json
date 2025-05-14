@@ -6,11 +6,13 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "assets"
+    "src/NavBar/InetellexusLogo.png",
+    "src/NavBar/NavBar.css"
   ],
   "scripts": {
     "build": "rollup -c",
-    "clean": "rimraf dist assets"
+    "clean": "rimraf dist assets",
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "react": "^18.0.0",
