@@ -1,4 +1,3 @@
 import "./NavBar.css";
-type NavBarProps = {};
-declare const NavBar: React.FC<NavBarProps>;
+declare const NavBar: React.FC;
 export default NavBar;
