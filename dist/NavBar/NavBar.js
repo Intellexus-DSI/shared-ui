@@ -5,9 +5,6 @@ import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import "./NavBar.css";
 // @ts-ignore
 import IntellexusLogo from "./InetellexusLogo.png";
-// type NavBarProps = {
-//     // Logout: React.ReactNode;
-// };
 const NavBar = () => {
     const navigate = useNavigate();
     const [dropdownStates, setDropdownStates] = useState({

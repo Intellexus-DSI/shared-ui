@@ -6,10 +6,6 @@ import "./NavBar.css";
 import IntellexusLogo from "./InetellexusLogo.png";
 
 
-// type NavBarProps = {
-//     // Logout: React.ReactNode;
-// };
-
 const NavBar: React.FC = () => {
     const navigate = useNavigate();
     const [dropdownStates, setDropdownStates] = useState({
@@ -176,7 +172,6 @@ const NavBar: React.FC = () => {
                         >
                             Info
                         </Nav.Link>
-                        {/* {Logout} */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
