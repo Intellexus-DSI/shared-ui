@@ -1,0 +1,96 @@
+/* Base Navbar */
+.NavBar_navbar__EqLXC {
+    font-family: var(--nav-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    background-image: url("./navigtion_background.jpg");
+    background-size: cover;
+}
+
+.NavBar_nav-logo__TLz26:hover {
+    opacity: 0.8;
+}
+
+.NavBar_nav-toggle__QjNgC {
+    background-color: white;
+    color: #636363;
+    margin-right: 2%;
+}
+
+/* Navigation Links */
+.NavBar_nav-links__18qGD {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.NavBar_nav-item__84k-h {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.NavBar_nav-item__84k-h:hover,
+.NavBar_nav-item__84k-h:focus {
+    color: #a7937d;
+    outline: none;
+    /* Remove the default focus outline */
+}
+
+/* Show the dropdown menu on hover */
+.NavBar_dropdown__PVOJy:hover .NavBar_dropdown-menu__3Ze-h {
+    display: block;
+}
+
+.NavBar_dropdown-item__72Llh {
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.NavBar_dropdown-item__72Llh:hover {
+    background-color: #f8f9fa;
+    color: #a7937d;
+}
+
+#NavBar_texts-dropdown__X6ytp,
+#NavBar_versions-dropdown__THXOb,
+#NavBar_works-dropdown__gWd-l,
+#NavBar_teams-dropdown__fMfzP {
+    color: white;
+}
+
+#NavBar_codes-dropdown__w9FSJ {
+    color: white;
+}
+
+#NavBar_texts-dropdown__X6ytp:hover,
+#NavBar_versions-dropdown__THXOb:hover,
+#NavBar_works-dropdown__gWd-l:hover,
+#NavBar_teams-dropdown__fMfzP:hover {
+    color: #a7937d;
+}
+
+#NavBar_codes-dropdown__w9FSJ:hover {
+    color: #a7937d;
+}
+
+.NavBar_centered-dropdown__gR-2J .NavBar_dropdown-menu__3Ze-h {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.NavBar_nav-logo-img__cS4Hf {
+    height: 100px;
+    width: auto;
+}
