@@ -1,12 +1,15 @@
-import { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import "./NavBar.css";
+import "../styles/NavBar.css";
 // @ts-ignore
 import IntellexusLogo from "../assets/InetellexusLogo.png";
 
+interface NavBarProps {
+    logoutComponent: ReactNode;
+}
 
-const NavBar: React.FC = () => {
+const NavBar = ({ logoutComponent }: NavBarProps) => {
     const navigate = useNavigate();
     const [dropdownStates, setDropdownStates] = useState({
         texts: false,
@@ -14,7 +17,7 @@ const NavBar: React.FC = () => {
         works: false,
         teams: false,
     });
-    const [isCollapsed, setIsCollapsed] = useState(true); // State to manage collapse
+    const [isCollapsed, setIsCollapsed] = useState(true);
 
     const handleMouseEnter = (key: string) => {
         setDropdownStates((prevState) => ({ ...prevState, [key]: true }));
@@ -26,7 +29,7 @@ const NavBar: React.FC = () => {
 
     const handleNavigate = (path: string) => {
         navigate(path);
-        setIsCollapsed(true); // Close the collapse when an option is selected
+        setIsCollapsed(true);
     };
 
     return (
@@ -34,11 +37,10 @@ const NavBar: React.FC = () => {
             expand="lg"
             sticky="top"
             className="navbar"
-            expanded={!isCollapsed} // Control the collapse state
-            onToggle={() => setIsCollapsed(!isCollapsed)} // Toggle collapse state
+            expanded={!isCollapsed}
+            onToggle={() => setIsCollapsed(!isCollapsed)}
         >
             <Container>
-                {/* Brand/Logo */}
                 <div className="d-flex justify-content-between align-items-center w-100">
                     <Navbar.Brand
                         onClick={() => handleNavigate("/")}
@@ -53,14 +55,12 @@ const NavBar: React.FC = () => {
                         </div>
                     </Navbar.Brand>
 
-                    {/* Toggle Button for Small Screens */}
                     <Navbar.Toggle
                         className="nav-toggle"
                         aria-controls="basic-navbar-nav"
                     />
                 </div>
 
-                {/* Collapsible Navigation Menu */}
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto nav-links">
                         <NavDropdown
@@ -74,9 +74,7 @@ const NavBar: React.FC = () => {
                             <NavDropdown.Item onClick={() => handleNavigate("/texts/indic")}>
                                 Indic
                             </NavDropdown.Item>
-                            <NavDropdown.Item
-                                onClick={() => handleNavigate("/texts/tibetan")}
-                            >
+                            <NavDropdown.Item onClick={() => handleNavigate("/texts/tibetan")}>
                                 Tibetan
                             </NavDropdown.Item>
                         </NavDropdown>
@@ -88,14 +86,10 @@ const NavBar: React.FC = () => {
                             onMouseEnter={() => handleMouseEnter("versions")}
                             onMouseLeave={() => handleMouseLeave("versions")}
                         >
-                            <NavDropdown.Item
-                                onClick={() => handleNavigate("/versions/indic")}
-                            >
+                            <NavDropdown.Item onClick={() => handleNavigate("/versions/indic")}>
                                 Indic
                             </NavDropdown.Item>
-                            <NavDropdown.Item
-                                onClick={() => handleNavigate("/versions/tibetan")}
-                            >
+                            <NavDropdown.Item onClick={() => handleNavigate("/versions/tibetan")}>
                                 Tibetan
                             </NavDropdown.Item>
                         </NavDropdown>
@@ -110,21 +104,14 @@ const NavBar: React.FC = () => {
                             <NavDropdown.Item onClick={() => handleNavigate("/works/indic")}>
                                 Indic
                             </NavDropdown.Item>
-                            <NavDropdown.Item
-                                onClick={() => handleNavigate("/works/tibetan")}
-                            >
+                            <NavDropdown.Item onClick={() => handleNavigate("/works/tibetan")}>
                                 Tibetan
                             </NavDropdown.Item>
-                            <NavDropdown.Item
-                                onClick={() => handleNavigate("/works/chinese")}
-                            >
+                            <NavDropdown.Item onClick={() => handleNavigate("/works/chinese")}>
                                 Chinese
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link
-                            onClick={() => handleNavigate("/persons")}
-                            className="nav-item"
-                        >
+                        <Nav.Link onClick={() => handleNavigate("/persons")} className="nav-item">
                             Persons
                         </Nav.Link>
                         <NavDropdown
@@ -135,43 +122,26 @@ const NavBar: React.FC = () => {
                             onMouseEnter={() => handleMouseEnter("teams")}
                             onMouseLeave={() => handleMouseLeave("teams")}
                         >
-                            <NavDropdown.Item
-                                onClick={() => handleNavigate("/teams/chinese")}
-                            >
+                            <NavDropdown.Item onClick={() => handleNavigate("/teams/chinese")}>
                                 Chinese
                             </NavDropdown.Item>
-                            <NavDropdown.Item
-                                onClick={() => handleNavigate("/teams/tibetan")}
-                            >
+                            <NavDropdown.Item onClick={() => handleNavigate("/teams/tibetan")}>
                                 Tibetan
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link
-                            onClick={() => handleNavigate("/colophons")}
-                            className="nav-item"
-                        >
+                        <Nav.Link onClick={() => handleNavigate("/colophons")} className="nav-item">
                             Colophons
                         </Nav.Link>
-                        <Nav.Link
-                            onClick={() => handleNavigate("/places")}
-                            className="nav-item"
-                        >
+                        <Nav.Link onClick={() => handleNavigate("/places")} className="nav-item">
                             Places
                         </Nav.Link>
-
-
-                        <Nav.Link
-                            onClick={() => handleNavigate("/codes")}
-                            className="nav-item"
-                        >
+                        <Nav.Link onClick={() => handleNavigate("/codes")} className="nav-item">
                             Codes
                         </Nav.Link>
-                        <Nav.Link
-                            onClick={() => handleNavigate("/markdown")}
-                            className="nav-item"
-                        >
+                        <Nav.Link onClick={() => handleNavigate("/markdown")} className="nav-item">
                             Info
                         </Nav.Link>
+                        {logoutComponent}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
