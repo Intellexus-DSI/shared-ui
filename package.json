@@ -5,6 +5,10 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/your-username/shared-ui.git"
+    },
     "scripts": {
         "build": "tsc",
         "prepare": "npm run build"
