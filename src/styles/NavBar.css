@@ -94,3 +94,12 @@
 .nav-link:focus {
     color: #a7937d !important;
 }
+
+.nav-regular-link {
+    color: white !important;
+}
+
+.nav-regular-link:hover,
+.nav-regular-link:focus {
+    color: #a7937d !important;
+}

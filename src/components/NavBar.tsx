@@ -111,7 +111,7 @@ const NavBar = ({ logoutComponent }: NavBarProps) => {
                                 Chinese
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link onClick={() => handleNavigate("/persons")} className="nav-item">
+                        <Nav.Link onClick={() => handleNavigate("/persons")} className="nav-item nav-regular-link">
                             Persons
                         </Nav.Link>
                         <NavDropdown
@@ -129,19 +129,19 @@ const NavBar = ({ logoutComponent }: NavBarProps) => {
                                 Tibetan
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link onClick={() => handleNavigate("/colophons")} className="nav-item">
+                        <Nav.Link onClick={() => handleNavigate("/colophons")} className="nav-item nav-regular-link">
                             Colophons
                         </Nav.Link>
-                        <Nav.Link onClick={() => handleNavigate("/places")} className="nav-item">
+                        <Nav.Link onClick={() => handleNavigate("/places")} className="nav-item nav-regular-link">
                             Places
                         </Nav.Link>
-                        <Nav.Link onClick={() => handleNavigate("/codes")} className="nav-item">
+                        <Nav.Link onClick={() => handleNavigate("/codes")} className="nav-item nav-regular-link">
                             Codes
                         </Nav.Link>
-                        <Nav.Link onClick={() => handleNavigate("/markdown")} className="nav-item">
+                        <Nav.Link onClick={() => handleNavigate("/markdown")} className="nav-item nav-regular-link">
                             Info
                         </Nav.Link>
-                        {logoutComponent}
+                        {/* {logoutComponent} */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

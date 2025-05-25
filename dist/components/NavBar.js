@@ -88,14 +88,13 @@ var NavBar = function (_a) {
                         react_1.default.createElement(react_bootstrap_1.NavDropdown.Item, { onClick: function () { return handleNavigate("/works/indic"); } }, "Indic"),
                         react_1.default.createElement(react_bootstrap_1.NavDropdown.Item, { onClick: function () { return handleNavigate("/works/tibetan"); } }, "Tibetan"),
                         react_1.default.createElement(react_bootstrap_1.NavDropdown.Item, { onClick: function () { return handleNavigate("/works/chinese"); } }, "Chinese")),
-                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/persons"); }, className: "nav-item" }, "Persons"),
+                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/persons"); }, className: "nav-item nav-regular-link" }, "Persons"),
                     react_1.default.createElement(react_bootstrap_1.NavDropdown, { title: "Teams", id: "teams-dropdown", className: "nav-item centered-dropdown", show: dropdownStates.teams, onMouseEnter: function () { return handleMouseEnter("teams"); }, onMouseLeave: function () { return handleMouseLeave("teams"); } },
                         react_1.default.createElement(react_bootstrap_1.NavDropdown.Item, { onClick: function () { return handleNavigate("/teams/chinese"); } }, "Chinese"),
                         react_1.default.createElement(react_bootstrap_1.NavDropdown.Item, { onClick: function () { return handleNavigate("/teams/tibetan"); } }, "Tibetan")),
-                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/colophons"); }, className: "nav-item" }, "Colophons"),
-                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/places"); }, className: "nav-item" }, "Places"),
-                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/codes"); }, className: "nav-item" }, "Codes"),
-                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/markdown"); }, className: "nav-item" }, "Info"),
-                    logoutComponent)))));
+                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/colophons"); }, className: "nav-item nav-regular-link" }, "Colophons"),
+                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/places"); }, className: "nav-item nav-regular-link" }, "Places"),
+                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/codes"); }, className: "nav-item nav-regular-link" }, "Codes"),
+                    react_1.default.createElement(react_bootstrap_1.Nav.Link, { onClick: function () { return handleNavigate("/markdown"); }, className: "nav-item nav-regular-link" }, "Info"))))));
 };
 exports.default = NavBar;
