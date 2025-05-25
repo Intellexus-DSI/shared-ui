@@ -103,3 +103,18 @@
 .nav-regular-link:focus {
     color: #a7937d !important;
 }
+
+a.nav-item.nav-link {
+    color: white;
+}
+
+a.nav-item.nav-link:hover,
+a.nav-item.nav-link:focus {
+    color: #a7937d !important;
+}
+
+.nav-item.nav-link.active {
+    color: #a7937d !important;
+}
+
+
