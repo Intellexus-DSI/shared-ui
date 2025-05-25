@@ -85,3 +85,12 @@
     height: 100px;
     width: auto;
 }
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #a7937d !important;
+}
