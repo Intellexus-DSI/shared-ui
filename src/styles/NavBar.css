@@ -32,7 +32,7 @@
     border: none;
     font-size: 16px;
     font-weight: 500;
-    color: white;
+    color: white !important;
     cursor: pointer;
     text-decoration: none;
     transition: color 0.3s;
@@ -40,8 +40,8 @@
 
 .nav-item:hover,
 .nav-item:focus {
-    color: #a7937d;
-    outline: none;
+    color: #a7937d !important;
+    outline: none !important;
 }
 
 /* Show the dropdown menu on hover */
