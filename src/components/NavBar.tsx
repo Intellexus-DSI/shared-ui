@@ -5,18 +5,21 @@ import "../styles/NavBar.css";
 // @ts-ignore
 import IntellexusLogo from "../assets/InetellexusLogo.png";
 
-interface NavBarProps {
-    logoutComponent: ReactNode;
+interface NavItem {
+    title: string;
+    type: 'dropdown' | 'link';
+    items?: { title: string; path: string }[];
+    path?: string;
 }
 
-const NavBar = ({ logoutComponent }: NavBarProps) => {
+interface NavBarProps {
+    logoutComponent: ReactNode;
+    items: NavItem[];
+}
+
+const NavBar = ({ logoutComponent, items }: NavBarProps) => {
     const navigate = useNavigate();
-    const [dropdownStates, setDropdownStates] = useState({
-        texts: false,
-        versions: false,
-        works: false,
-        teams: false,
-    });
+    const [dropdownStates, setDropdownStates] = useState<Record<string, boolean>>({});
     const [isCollapsed, setIsCollapsed] = useState(true);
 
     const handleMouseEnter = (key: string) => {
@@ -63,84 +66,34 @@ const NavBar = ({ logoutComponent }: NavBarProps) => {
 
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto nav-links">
-                        <NavDropdown
-                            title="Texts"
-                            id="texts-dropdown"
-                            className="nav-item centered-dropdown"
-                            show={dropdownStates.texts}
-                            onMouseEnter={() => handleMouseEnter("texts")}
-                            onMouseLeave={() => handleMouseLeave("texts")}
-                        >
-                            <NavDropdown.Item onClick={() => handleNavigate("/texts/indic")}>
-                                Indic
-                            </NavDropdown.Item>
-                            <NavDropdown.Item onClick={() => handleNavigate("/texts/tibetan")}>
-                                Tibetan
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown
-                            title="Versions"
-                            id="versions-dropdown"
-                            className="nav-item centered-dropdown"
-                            show={dropdownStates.versions}
-                            onMouseEnter={() => handleMouseEnter("versions")}
-                            onMouseLeave={() => handleMouseLeave("versions")}
-                        >
-                            <NavDropdown.Item onClick={() => handleNavigate("/versions/indic")}>
-                                Indic
-                            </NavDropdown.Item>
-                            <NavDropdown.Item onClick={() => handleNavigate("/versions/tibetan")}>
-                                Tibetan
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown
-                            title="Works"
-                            id="works-dropdown"
-                            className="nav-item centered-dropdown"
-                            show={dropdownStates.works}
-                            onMouseEnter={() => handleMouseEnter("works")}
-                            onMouseLeave={() => handleMouseLeave("works")}
-                        >
-                            <NavDropdown.Item onClick={() => handleNavigate("/works/indic")}>
-                                Indic
-                            </NavDropdown.Item>
-                            <NavDropdown.Item onClick={() => handleNavigate("/works/tibetan")}>
-                                Tibetan
-                            </NavDropdown.Item>
-                            <NavDropdown.Item onClick={() => handleNavigate("/works/chinese")}>
-                                Chinese
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link onClick={() => handleNavigate("/persons")} className="nav-item nav-regular-link">
-                            Persons
-                        </Nav.Link>
-                        <NavDropdown
-                            title="Teams"
-                            id="teams-dropdown"
-                            className="nav-item centered-dropdown"
-                            show={dropdownStates.teams}
-                            onMouseEnter={() => handleMouseEnter("teams")}
-                            onMouseLeave={() => handleMouseLeave("teams")}
-                        >
-                            <NavDropdown.Item onClick={() => handleNavigate("/teams/chinese")}>
-                                Chinese
-                            </NavDropdown.Item>
-                            <NavDropdown.Item onClick={() => handleNavigate("/teams/tibetan")}>
-                                Tibetan
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link onClick={() => handleNavigate("/colophons")} className="nav-item nav-regular-link">
-                            Colophons
-                        </Nav.Link>
-                        <Nav.Link onClick={() => handleNavigate("/places")} className="nav-item nav-regular-link">
-                            Places
-                        </Nav.Link>
-                        <Nav.Link onClick={() => handleNavigate("/codes")} className="nav-item nav-regular-link">
-                            Codes
-                        </Nav.Link>
-                        <Nav.Link onClick={() => handleNavigate("/markdown")} className="nav-item nav-regular-link">
-                            Info
-                        </Nav.Link>
+                        {items.map((item, index) => {
+                            if (item.type === 'dropdown' && item.items) {
+                                return (
+                                    <NavDropdown
+                                        key={index}
+                                        title={item.title}
+                                        id={`${item.title.toLowerCase()}-dropdown`}
+                                        className="nav-item centered-dropdown"
+                                        show={dropdownStates[item.title] || false}
+                                        onMouseEnter={() => handleMouseEnter(item.title)}
+                                        onMouseLeave={() => handleMouseLeave(item.title)}
+                                    >
+                                        {item.items.map((subItem, subIndex) => (
+                                            <NavDropdown.Item key={subIndex} onClick={() => handleNavigate(subItem.path)}>
+                                                {subItem.title}
+                                            </NavDropdown.Item>
+                                        ))}
+                                    </NavDropdown>
+                                );
+                            } else if (item.type === 'link' && item.path) {
+                                return (
+                                    <Nav.Link key={index} onClick={() => handleNavigate(item.path!)} className="nav-item nav-regular-link">
+                                        {item.title}
+                                    </Nav.Link>
+                                );
+                            }
+                            return null;
+                        })}
                         {/* {logoutComponent} */}
                     </Nav>
                 </Navbar.Collapse>
