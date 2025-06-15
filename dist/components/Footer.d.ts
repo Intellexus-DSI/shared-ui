@@ -1,4 +1,10 @@
-import React from "react";
 import "../styles/Footer.css";
-declare const Footer: React.FC;
-export default Footer;
+interface FooterLink {
+    label: string;
+    href: string;
+}
+interface FooterProps {
+    footerLinks: FooterLink[];
+}
+export declare const Footer: ({ footerLinks }: FooterProps) => import("react/jsx-runtime").JSX.Element;
+export {};

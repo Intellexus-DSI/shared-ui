@@ -13,5 +13,5 @@ interface NavBarProps {
     logoutComponent: ReactNode;
     items: NavItem[];
 }
-declare const NavBar: ({ logoutComponent, items }: NavBarProps) => import("react/jsx-runtime").JSX.Element;
-export default NavBar;
+export declare const NavBar: ({ logoutComponent, items }: NavBarProps) => import("react/jsx-runtime").JSX.Element;
+export {};

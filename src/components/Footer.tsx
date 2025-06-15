@@ -16,7 +16,16 @@ import "../styles/Footer.css";
 
 const ITEM_HEIGHT = 48;
 
-const Footer: React.FC = () => {
+interface FooterLink {
+    label: string;
+    href: string;
+}
+
+interface FooterProps {
+    footerLinks: FooterLink[];
+}
+
+export const Footer = ({ footerLinks }: FooterProps) => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
 
@@ -27,18 +36,6 @@ const Footer: React.FC = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
-    const footerLinks = [
-        { label: "Home", href: "/" },
-        { label: "Project", href: "/" },
-        { label: "Team", href: "/" },
-        { label: "Events", href: "/" },
-        { label: "Activities", href: "/" },
-        { label: "News", href: "/" },
-        { label: "Publications", href: "/" },
-        { label: "Platform", href: "/" },
-        { label: "Collaborations", href: "/" },
-    ];
 
     return (
         <footer className="footer">
@@ -89,9 +86,9 @@ const Footer: React.FC = () => {
                         {footerLinks.map((link) => (
                             <MenuItem
                                 key={link.label}
-                                component="a" // Render MenuItem as an <a> tag
-                                href={link.href} // Set the href for navigation
-                                onClick={handleClose} // Close the menu on click
+                                component="a"
+                                href={link.href}
+                                onClick={handleClose}
                                 className="footer-link"
                             >
                                 {link.label}
@@ -112,5 +109,3 @@ const Footer: React.FC = () => {
         </footer>
     );
 };
-
-export default Footer;

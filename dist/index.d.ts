@@ -1,1 +1,2 @@
-export { default as NavBar } from './components/NavBar';
+export { NavBar } from './components/NavBar';
+export { Footer } from './components/Footer';

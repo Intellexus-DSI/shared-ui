@@ -1,22 +1,28 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState } from "react";
-import { Navbar } from "react-bootstrap";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Footer = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_1 = require("react");
+const react_bootstrap_1 = require("react-bootstrap");
+const IconButton_1 = __importDefault(require("@mui/material/IconButton"));
+const Menu_1 = __importDefault(require("@mui/material/Menu"));
+const MenuItem_1 = __importDefault(require("@mui/material/MenuItem"));
+const MoreVert_1 = __importDefault(require("@mui/icons-material/MoreVert"));
 // @ts-ignore
-import IntellexusLogo from "../assets/InetellexusLogo.png";
+const InetellexusLogo_png_1 = __importDefault(require("../assets/InetellexusLogo.png"));
 // @ts-ignore
-import logo_erc from "../assets/logo_erc.png";
+const logo_erc_png_1 = __importDefault(require("../assets/logo_erc.png"));
 // @ts-ignore
-import logo_reichman_university from "../assets/logo_reichman_university.png";
+const logo_reichman_university_png_1 = __importDefault(require("../assets/logo_reichman_university.png"));
 // @ts-ignore
-import logo_uni_hamburg from "../assets/logo_uni_hamburg.png";
-import "../styles/Footer.css";
+const logo_uni_hamburg_png_1 = __importDefault(require("../assets/logo_uni_hamburg.png"));
+require("../styles/Footer.css");
 const ITEM_HEIGHT = 48;
-const Footer = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
+const Footer = ({ footerLinks }) => {
+    const [anchorEl, setAnchorEl] = (0, react_1.useState)(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -24,18 +30,7 @@ const Footer = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const footerLinks = [
-        { label: "Home", href: "/" },
-        { label: "Project", href: "/" },
-        { label: "Team", href: "/" },
-        { label: "Events", href: "/" },
-        { label: "Activities", href: "/" },
-        { label: "News", href: "/" },
-        { label: "Publications", href: "/" },
-        { label: "Platform", href: "/" },
-        { label: "Collaborations", href: "/" },
-    ];
-    return (_jsxs("footer", { className: "footer", children: [_jsxs("div", { className: "footer-top", children: [_jsx("div", {}), _jsx("img", { src: logo_uni_hamburg, alt: "Hamburg Logo", className: "footer-hamburg-img" }), _jsx("img", { src: logo_reichman_university, alt: "Reichman Logo", className: "footer-reichman-img" }), _jsx("img", { src: logo_erc, alt: "ERC Logo", className: "footer-erc-img" }), _jsx("div", {})] }), _jsxs(Navbar, { expand: "lg", className: "footer-bottom", children: [_jsx("div", { className: "footer-logo-container", children: _jsx(Navbar.Brand, { href: "/", className: "footer-logo", children: _jsx("img", { src: IntellexusLogo, alt: "Intellexus Logo", className: "footer-logo-img" }) }) }), _jsxs("div", { className: "d-lg-none", children: [_jsx(IconButton, { "aria-label": "more", id: "footer-menu-button", "aria-controls": open ? "footer-menu" : undefined, "aria-expanded": open ? "true" : undefined, "aria-haspopup": "true", onClick: handleClick, sx: { color: "white" }, children: _jsx(MoreVertIcon, {}) }), _jsx(Menu, { id: "footer-menu", MenuListProps: {
+    return ((0, jsx_runtime_1.jsxs)("footer", { className: "footer", children: [(0, jsx_runtime_1.jsxs)("div", { className: "footer-top", children: [(0, jsx_runtime_1.jsx)("div", {}), (0, jsx_runtime_1.jsx)("img", { src: logo_uni_hamburg_png_1.default, alt: "Hamburg Logo", className: "footer-hamburg-img" }), (0, jsx_runtime_1.jsx)("img", { src: logo_reichman_university_png_1.default, alt: "Reichman Logo", className: "footer-reichman-img" }), (0, jsx_runtime_1.jsx)("img", { src: logo_erc_png_1.default, alt: "ERC Logo", className: "footer-erc-img" }), (0, jsx_runtime_1.jsx)("div", {})] }), (0, jsx_runtime_1.jsxs)(react_bootstrap_1.Navbar, { expand: "lg", className: "footer-bottom", children: [(0, jsx_runtime_1.jsx)("div", { className: "footer-logo-container", children: (0, jsx_runtime_1.jsx)(react_bootstrap_1.Navbar.Brand, { href: "/", className: "footer-logo", children: (0, jsx_runtime_1.jsx)("img", { src: InetellexusLogo_png_1.default, alt: "Intellexus Logo", className: "footer-logo-img" }) }) }), (0, jsx_runtime_1.jsxs)("div", { className: "d-lg-none", children: [(0, jsx_runtime_1.jsx)(IconButton_1.default, { "aria-label": "more", id: "footer-menu-button", "aria-controls": open ? "footer-menu" : undefined, "aria-expanded": open ? "true" : undefined, "aria-haspopup": "true", onClick: handleClick, sx: { color: "white" }, children: (0, jsx_runtime_1.jsx)(MoreVert_1.default, {}) }), (0, jsx_runtime_1.jsx)(Menu_1.default, { id: "footer-menu", MenuListProps: {
                                     "aria-labelledby": "footer-menu-button",
                                 }, anchorEl: anchorEl, open: open, onClose: handleClose, slotProps: {
                                     paper: {
@@ -44,7 +39,6 @@ const Footer = () => {
                                             width: "20ch",
                                         },
                                     },
-                                }, children: footerLinks.map((link) => (_jsx(MenuItem, { component: "a" // Render MenuItem as an <a> tag
-                                    , href: link.href, onClick: handleClose, className: "footer-link", children: link.label }, link.label))) })] }), _jsx("div", { className: "footer-text d-none d-lg-flex", children: footerLinks.map((link) => (_jsx("a", { href: link.href, className: "footer-link", children: link.label }, link.label))) })] })] }));
+                                }, children: footerLinks.map((link) => ((0, jsx_runtime_1.jsx)(MenuItem_1.default, { component: "a", href: link.href, onClick: handleClose, className: "footer-link", children: link.label }, link.label))) })] }), (0, jsx_runtime_1.jsx)("div", { className: "footer-text d-none d-lg-flex", children: footerLinks.map((link) => ((0, jsx_runtime_1.jsx)("a", { href: link.href, className: "footer-link", children: link.label }, link.label))) })] })] }));
 };
-export default Footer;
+exports.Footer = Footer;

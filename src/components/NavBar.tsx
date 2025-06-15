@@ -17,7 +17,7 @@ interface NavBarProps {
     items: NavItem[];
 }
 
-const NavBar = ({ logoutComponent, items }: NavBarProps) => {
+export const NavBar = ({ logoutComponent, items }: NavBarProps) => {
     const navigate = useNavigate();
     const [dropdownStates, setDropdownStates] = useState<Record<string, boolean>>({});
     const [isCollapsed, setIsCollapsed] = useState(true);
@@ -101,5 +101,3 @@ const NavBar = ({ logoutComponent, items }: NavBarProps) => {
         </Navbar>
     );
 };
-
-export default NavBar;
