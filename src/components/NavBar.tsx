@@ -1,5 +1,4 @@
 import React, { useState, ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import "../styles/NavBar.css";
 // @ts-ignore
@@ -15,10 +14,10 @@ interface NavItem {
 interface NavBarProps {
     logoutComponent: ReactNode;
     items: NavItem[];
+    navigate: (path: string) => void;
 }
 
-export const NavBar = ({ logoutComponent, items }: NavBarProps) => {
-    const navigate = useNavigate();
+export const NavBar = ({ logoutComponent, items, navigate }: NavBarProps) => {
     const [dropdownStates, setDropdownStates] = useState<Record<string, boolean>>({});
     const [isCollapsed, setIsCollapsed] = useState(true);
 

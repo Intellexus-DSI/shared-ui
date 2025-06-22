@@ -12,6 +12,7 @@ interface NavItem {
 interface NavBarProps {
     logoutComponent: ReactNode;
     items: NavItem[];
+    navigate: (path: string) => void;
 }
-export declare const NavBar: ({ logoutComponent, items }: NavBarProps) => import("react/jsx-runtime").JSX.Element;
+export declare const NavBar: ({ logoutComponent, items, navigate }: NavBarProps) => import("react/jsx-runtime").JSX.Element;
 export {};
