@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Sans:ital@0;1&family=Noto+Serif:ital,wght@0,600;1,600&display=swap');
+
+:root {
+    --text-font: 'Kalam', 'cursive';
+    --noto-serif-font: "Noto Serif", serif;
+    --nav-font: 'Noto Sans', sans-serif;
+    --primary-color: #f8ecde;
+    --secondary-color: #fcf8f4;
+    --third-color: #bda082;
+    --fourth-color: rgb(228, 214, 199);
+    --color5: #636363;
+    --color6: rgb(168, 85, 63);
+    --color7: rgb(184, 111, 91);
+}
+
+h2,
+h3 {
+    font-family: var(--noto-serif-font);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-style: italic;
+    color: var(--third-color);
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+input,
+select,
+textarea,
+label {
+    // font-family: var(--text-font);
+}
+
+body {
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.edit-file-container {
+    background-color: var(--secondary-color);
+}
+
+.edit-file-container input,
+select,
+textarea {
+    background-color: var(--secondary-color);
+}
+
+.btn-primary,
+.btn {
+    background-color: var(--third-color);
+    border: none;
+    color: white;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn:active,
+.btn-primary:active {
+    background-color: var(--fourth-color);
+    color: white;
+}
+
+.btn-light {
+    box-shadow: 2px 3px 2px rgb(126, 126, 126);
+    background-color: #ece8e8;
+    color: black;
+}
+
+.btn-light:hover {
+    background-color: #d3cdcd;
+    color: black;
+}
+
+.edit-file-container h2 {
+    color: var(--third-color);
+}
+
+/* Main container should take up the remaining space */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content should grow to fill the space */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 0;
+}
+
+.cancel-button {
+    background-color: var(--color6) !important;
+}
+
+.cancel-button:hover {
+    background-color: var(--color7) !important;
+}
+
+.update-button,
+.cancel-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.delete-button {
+    background-color: #cc3c3c;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+}
+
+.delete-button:hover {
+    background-color: #a63232;
+    color: white;
+}
+
+#dropdown-basic,
+#reference-dropdown {
+    background-color: var(--third-color);
+}
+
+.static-field {
+    color: #989898;
+}
+
+.muiButton {
+    background-color: var(--third-color) !important; // Custom background color
+    color: black !important; // Ensure text color is visible
+}
+
+.choose-version:active {
+    background-color: var(--third-color);
+}
+
+.edge-button {
+    margin-bottom: 13px;
+}
+
+.accordion-toggle,
+.accordion-toggle:hover {
+    color: black;
+}
+
+.error-component {
+    color: red;
+}
+
+.main-content {
+    padding: "20px"
+}
+
+.toolbar button {
+    margin-bottom: 1rem;
+}
+
+.margin-bottom-1rem {
+    margin-bottom: 1rem;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0px;
+}
+
+.btn-margin-from-table {
+    margin-bottom: 1.5%;
+}
+
+.title-field,
+h2,
+h3 {
+    text-align: center;
+}
+
+.disabled-field {
+    background-color: #f4f4f4 !important;
+    border: none !important;
+}
+
+.form-actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.form-action-left,
+.form-action-right {
+    display: flex;
+    align-items: center;
+}
+
+.form-action-right button {
+    margin-left: 10px;
+}

@@ -1,89 +1,61 @@
 /* Footer styles */
-.footer {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    padding: 4rem 0 2rem;
-    margin-top: auto;
+.footer-bottom {
+    background-image: none !important;
+    background-color: var(--color5) !important;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
 }
 
-.footer-content {
-    margin-bottom: 2rem;
+.footer-text {
+    flex: 3;
 }
 
-.footer-logo-section {
-    margin-bottom: 2rem;
+.footer-text a {
+    display: inline;
+    margin-right: 3%;
+    color: white;
+    text-decoration: none;
 }
 
-.footer-logo {
-    margin-bottom: 1rem;
+.footer-top {
+    margin-top: 2%;
+    background-color: white;
+    height: 8rem;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
 }
 
-.footer-logo-img {
-    max-width: 180px;
-    height: auto;
+.footer-top img {
+    align-self: center;
+    flex: 1;
+    width: 20%;
+    height: 60%;
 }
 
-.footer-description {
-    color: #a0a0a0;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-}
-
-.footer-links-section {
-    margin-bottom: 2rem;
-}
-
-.footer-section-title {
-    color: #ffffff;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 0.8rem;
+.footer-top div {
+    flex: 1;
 }
 
 .footer-link {
-    color: #a0a0a0;
+    color: black;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    justify-self: center;
 }
 
-.footer-link:hover {
-    color: #ffffff;
-    text-decoration: none;
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-left: 10%;
 }
 
-.footer-bottom {
-    border-top: 1px solid #333;
-    padding-top: 2rem;
-    text-align: center;
-}
-
-.copyright-text {
-    color: #a0a0a0;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .footer {
-        padding: 3rem 0 1.5rem;
-    }
-
-    .footer-logo-section {
-        text-align: center;
-    }
-
-    .footer-links-section {
-        text-align: center;
-    }
+.footer-logo-img {
+    width: 150px;
+    height: auto;
 }
