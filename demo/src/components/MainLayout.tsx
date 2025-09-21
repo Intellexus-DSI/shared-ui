@@ -13,6 +13,7 @@ interface NavItem {
 const navItems: NavItem[] = [
     { title: "Search", type: "link", path: "/" },
     { title: "Database", type: "link", path: "/compare" },
+    { title: "Multi-Choose Demo", type: "link", path: "/multi-choose" },
 ];
 
 const MainLayout: React.FC = () => {
