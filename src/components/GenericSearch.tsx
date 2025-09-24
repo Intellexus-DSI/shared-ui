@@ -35,7 +35,7 @@ const GenericSearch: React.FC<GenericSearchProps> = ({ content, label = "Search 
   const handleToggleSearch = () => {
     setIsExpanded(!isExpanded);
     if (isExpanded) {
-      setSearchTerm(''); // Clear search term when collapsing
+      setSearchTerm('');
     }
   };
 
