@@ -17,7 +17,7 @@ interface GenericSearchProps {
   label?: string;
 }
 
-const GenericSearch: React.FC<GenericSearchProps> = ({ content, label = "Search in Inquiry Text" }) => {
+export const GenericSearch: React.FC<GenericSearchProps> = ({ content, label = "Search in Inquiry Text" }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -87,5 +87,3 @@ const GenericSearch: React.FC<GenericSearchProps> = ({ content, label = "Search 
     </Box>
   );
 };
-
-export default GenericSearch;

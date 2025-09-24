@@ -14,10 +14,10 @@ interface MultiSelectCollectionsProps {
     label?: string;
 }
 
-export default function MultiSelectCollections({
+export const MultiSelectCollections: React.FC<MultiSelectCollectionsProps> = ({
     options,
     label = "Exclude collections",
-}: MultiSelectCollectionsProps) {
+}) => {
     const [selected, setSelected] = useState<Option[]>([]);
 
     return (
