@@ -47,3 +47,5 @@ export const MultiSelectCollections: React.FC<MultiSelectCollectionsProps> = ({
         />
     );
 }
+
+export default MultiSelectCollections;

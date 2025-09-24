@@ -87,3 +87,5 @@ export const GenericSearch: React.FC<GenericSearchProps> = ({ content, label = "
     </Box>
   );
 };
+
+export default GenericSearch;

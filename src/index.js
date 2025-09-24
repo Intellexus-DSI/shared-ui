@@ -19,7 +19,7 @@ var Multi_choose_1 = require("./components/Multi-choose");
 __createBinding(exports, NavBar_1, "default", "NavBar");
 __createBinding(exports, Footer_1, "default", "Footer");
 __createBinding(exports, GenericSearch_1, "default", "GenericSearch");
-__createBinding(exports, Multi_choose_1, "default", "Multi-choose");
+__createBinding(exports, Multi_choose_1, "default", "MultiSelectCollections");
 
 Object.defineProperty(exports, "NavBar", { enumerable: true, get: function () { return NavBar_1.NavBar; } });
 Object.defineProperty(exports, "Footer", { enumerable: true, get: function () { return Footer_1.Footer; } });

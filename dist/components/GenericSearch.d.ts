@@ -8,4 +8,4 @@ interface GenericSearchProps {
     label?: string;
 }
 export declare const GenericSearch: React.FC<GenericSearchProps>;
-export {};
+export default GenericSearch;

@@ -7,4 +7,4 @@ interface MultiSelectCollectionsProps {
     label?: string;
 }
 export declare const MultiSelectCollections: React.FC<MultiSelectCollectionsProps>;
-export {};
+export default MultiSelectCollections;
