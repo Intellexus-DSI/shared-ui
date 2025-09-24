@@ -14,6 +14,7 @@ const navItems: NavItem[] = [
     { title: "Search", type: "link", path: "/" },
     { title: "Database", type: "link", path: "/compare" },
     { title: "Multi-Choose Demo", type: "link", path: "/multi-choose" },
+    { title: "Generic Search Demo", type: "link", path: "/generic-search" },
 ];
 
 const MainLayout: React.FC = () => {
