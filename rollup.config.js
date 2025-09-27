@@ -18,13 +18,14 @@ export default {
         nodeResolve(),
         commonjs(),
         typescript({ tsconfig: './tsconfig.json' }),
+        postcss({
+            extract: false, // Inline CSS into the JS bundle
+            plugins: [require('postcss-url')({ url: 'inline' })],
+        }),
         url({
             include: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.gif'],
             limit: 100000000, // Inlines all assets as data URIs
             fileName: 'assets/[name][extname]'
-        }),
-        postcss({
-            extract: false, // Inline CSS into the JS bundle
         }),
     ],
     external: [
