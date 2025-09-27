@@ -12,6 +12,11 @@ module.exports = {
             format: 'cjs',
             sourcemap: true,
         },
+        {
+            file: 'dist/index.esm.js',
+            format: 'esm',
+            sourcemap: true,
+        },
     ],
     plugins: [
         nodeResolve(),
@@ -19,6 +24,7 @@ module.exports = {
         typescript({ tsconfig: './tsconfig.json' }),
         postcss({
             extract: false, // Inline CSS into the JS bundle
+            inject: true, // Explicitly inject styles into the DOM
             plugins: [require('postcss-import')(), require('postcss-url')({ url: 'inline' })],
         }),
         url({
