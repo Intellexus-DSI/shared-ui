@@ -28,8 +28,8 @@ export default {
         }),
         copy({
             targets: [
-                { src: 'src/assets', dest: 'dist' },
-                { src: 'src/styles', dest: 'dist' }
+                { src: 'src/assets', dest: 'dist/assets' },
+                { src: 'src/styles', dest: 'dist/styles' }
             ]
         })
     ],
