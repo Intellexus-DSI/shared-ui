@@ -24,7 +24,7 @@ export default {
             fileName: 'assets/[name][extname]'
         }),
         postcss({
-            extract: true,
+            extract: false, // Inline CSS into the JS bundle
         }),
     ],
     external: [
